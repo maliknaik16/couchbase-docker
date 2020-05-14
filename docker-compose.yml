@@ -18,13 +18,13 @@ services:
         #         soft: 100000000
         #         hard: 100000000
         volumes:
-            - ./base:/opt/couchbase/var
+            - ./couchbase_1:/opt/couchbase/var
         networks:
             - couchbase
     couchbase_2:
         image: couchbase:community-6.5.1
         volumes:
-            - ./subnode:/opt/couchbase/var
+            - ./couchbase_2:/opt/couchbase/var
         # ulimits:
         #     nofile:
         #         soft: 40960
