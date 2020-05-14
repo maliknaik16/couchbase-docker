@@ -2,10 +2,9 @@
 The Docker files for the couchbase
 
 ## Running multiple subnodes
-Use the following command to run multiple subnodes:
+Use the following command to run this docker container:
 ```bash
-# Replace the 'N' in the following command with the number of nodes you want to run.
-
-$ docker-compose up --scale couchbase_subnode=N
+$ docker-compose up -d
 ```
-
+## Production Deployment
+When in production uncomment the lines for the `ulimits` in the docker-compose.yml file.

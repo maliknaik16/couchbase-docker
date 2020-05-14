@@ -2,19 +2,39 @@ version: '3'
 networks:
     couchbase:
 services:
-    couchbase:
+    couchbase_1:
         image: couchbase:community-6.5.1
         ports:
             - "8091-8094:8091-8094"
             - "11210-11211:11210-11211"
+        # ulimits:
+        #     nofile:
+        #         soft: 40960
+        #         hard: 40960
+        #     memlock:
+        #         soft: 100000000
+        #         hard: 100000000
+        #     core:
+        #         soft: 100000000
+        #         hard: 100000000
         volumes:
-            - ./base:/opt/couchbase/var/lib/couchbase/data
+            - ./base:/opt/couchbase/var
         networks:
             - couchbase
-    couchbase_subnode:
+    couchbase_2:
         image: couchbase:community-6.5.1
         volumes:
-            - ./subnode:/opt/couchbase/var/lib/couchbase/data
+            - ./subnode:/opt/couchbase/var
+        # ulimits:
+        #     nofile:
+        #         soft: 40960
+        #         hard: 40960
+        #     memlock:
+        #         soft: 100000000
+        #         hard: 100000000
+        #     core:
+        #         soft: 100000000
+        #         hard: 100000000
         networks:
             - couchbase
 
