@@ -7,16 +7,6 @@ services:
         ports:
             - "8091-8094:8091-8094"
             - "11210-11211:11210-11211"
-        # ulimits:
-        #     nofile:
-        #         soft: 40960
-        #         hard: 40960
-        #     memlock:
-        #         soft: 100000000
-        #         hard: 100000000
-        #     core:
-        #         soft: 100000000
-        #         hard: 100000000
         volumes:
             - ./couchbase_1:/opt/couchbase/var
         networks:
@@ -25,16 +15,6 @@ services:
         image: couchbase:community-6.5.1
         volumes:
             - ./couchbase_2:/opt/couchbase/var
-        # ulimits:
-        #     nofile:
-        #         soft: 40960
-        #         hard: 40960
-        #     memlock:
-        #         soft: 100000000
-        #         hard: 100000000
-        #     core:
-        #         soft: 100000000
-        #         hard: 100000000
         networks:
             - couchbase
 
